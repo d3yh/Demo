@@ -51,7 +51,7 @@ public class GoodsController {
 
                     }
                     else {
-                        //获得锁失败后
+                        //获得锁失败后?
                         System.out.println("失败");
                         //run();
                     }

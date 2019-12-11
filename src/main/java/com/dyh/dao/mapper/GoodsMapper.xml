@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dyh.dao.GoodsMapper">
+
+
+    <update id="reduceStocks">
+        update goods_info set stock = stock - 1 where gid = #{gid} and stock >=1
+    </update>
+</mapper>

@@ -14,13 +14,13 @@ import org.springframework.util.concurrent.SuccessCallback;
 @Component
 public class KfkaProducer {
 
-
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
     public void  send(String topicName,Object data){
 
         ListenableFuture future = kafkaTemplate.send(topicName, data);
+
         future.addCallback(new SuccessCallback() {
             @Override
             public void onSuccess(Object o) {
@@ -30,6 +30,7 @@ public class KfkaProducer {
         }, new FailureCallback() {
             @Override
             public void onFailure(Throwable throwable) {
+
                 System.out.println("发送异常"+throwable);
             }
         });

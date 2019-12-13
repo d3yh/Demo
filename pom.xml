@@ -86,6 +86,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/libs/top-api-sdk-dev-chendong-20150526.054721-12.jar</systemPath>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>

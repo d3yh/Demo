@@ -31,6 +31,7 @@ public class KafkaConsumer {
             //进行数据库操作
             userService.addUserByUsername(user1);
 
+
             System.out.println("消费者2：接受到的消息-----------" + user  );
         }
 

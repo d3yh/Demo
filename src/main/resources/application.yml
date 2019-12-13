@@ -2,6 +2,7 @@
 spring:
   thymeleaf:
     cache: false
+  #配置数据源
   datasource:
     url: jdbc:mysql:///test?serverTimezone=UTC&characterEncoding=utf8
     username: root
@@ -13,6 +14,7 @@ spring:
     password: 394922
   kafka:
     bootstrap-servers: 49.234.21.180:9092
+    #生产者配置
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -20,11 +22,11 @@ spring:
       batch-size: 16384
       buffer-memory: 335554432
       acks: all
-      
+    #消费者配置
     consumer:
       group-id: tx-hello-group
       auto-commit-interval: 100
-      enable-auto-commit: true
+      enable-auto-commit: false
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

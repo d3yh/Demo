@@ -44,6 +44,8 @@ public class KafkaConsumer {
 
         if (kafkaMessage.isPresent()){
             Object user = kafkaMessage.get();
+
+
             System.out.println("消费者1：接受到的消息-----------" + user  );
         }
 

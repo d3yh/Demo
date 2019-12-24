@@ -29,7 +29,7 @@ public class DataXTestController {
     public String dataxTest(){
 
         try {
-            System.out.println("start");
+
             String windowcmd =  pythonPath+" "+dataxPath+" "+ jsonPath;
             System.out.println(windowcmd);
             Process pr = Runtime.getRuntime().exec(windowcmd);
@@ -40,11 +40,10 @@ public class DataXTestController {
             }
             in.close();
             pr.waitFor();
-            System.out.println("end");
+
 
         } catch (Exception e) {
             e.printStackTrace();
-            return "同步失败";
         }
 
         return "同步成功";
